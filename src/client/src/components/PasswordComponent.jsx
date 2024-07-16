@@ -6,6 +6,7 @@ import Form from '../components/Form';
 
 export default function PasswordComponent (props) {
   const [id, setId] = React.useState(props.id);
+  const [showpassword, setShowPassword] = React.useState(false);
   const deleteCallback = () => {
     Delete(id)
     .then((res) => {
@@ -17,7 +18,7 @@ export default function PasswordComponent (props) {
   return (
     <tr>
       <td>{props.name}</td>
-      <td>{props.value}</td>
+      <td style={{cursor: 'pointer'}} onClick={() => setShowPassword(!showpassword)} >{showpassword ? props.value : '********'}</td>
       <td>{`${props.time.getHours()}:${props.time.getMinutes()}:${props.time.getSeconds()} ${props.time.getDate()}/${props.time.getMonth()}/${props.time.getFullYear()}`}</td>
       <td>{props.type}</td>
       <td>
