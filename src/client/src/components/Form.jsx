@@ -7,7 +7,7 @@ export default function Form (props) {
   const [id, setId] = React.useState(props.id);
   const [name, setName] = React.useState();
   const [value, setValue] = React.useState();
-  const [type, setType] = React.useState();
+  const [type, setType] = React.useState('1');
 
   const submitCallback = () => {
     Array.prototype.map.call(document.getElementsByClassName('validation'), (element) => {
@@ -71,17 +71,12 @@ export default function Form (props) {
               onChange={(e) => setValue(e.target.value)}
             />
           </div>
-          <div class="form-group">
+          <div class="form-group radio">
             <label>Type</label>
-            <select
-              class="form-control"
-              id="type"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-            >
-              <option value="0">Email</option>
-              <option value="1">Web</option>
-            </select>
+            <label >Email</label>
+            <input type="radio" name='type' checked={type === '0'} onChange={(e) => setType(e.target.value)} value="0"/>
+            <label >Web</label>
+            <input  type="radio" name='type' checked={type === '1'} value={'1'}  onChange={(e) => setType(e.target.value)} />
           </div>
           <div class="btn-con">
             <div
