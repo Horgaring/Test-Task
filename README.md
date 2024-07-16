@@ -3,4 +3,5 @@
     dotnet run
 #### Clinet
     cd src/client
-    npm run dev
+    npm run build
+    npm start build
