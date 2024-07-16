@@ -8,6 +8,7 @@
     npm i
     
     npm start build
+http://localhost:3000
 #### Clinet with live server
     npm run build
     
