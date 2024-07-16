@@ -7,6 +7,8 @@
 
     npm i
     
+    npm start build
+#### Clinet with live server
     npm run build
     
-    npm start build
+    
